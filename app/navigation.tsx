@@ -27,7 +27,7 @@ const gfeComponents: { title: string; href: string; description: string }[] = [
 	{
 		title: "GFE Image uploader",
 		href: "/gfe/image-uploader",
-		description: "Visually or semantically separates content.",
+		description: "",
 	},
 	{
 		title: "GFE Reset Password",
