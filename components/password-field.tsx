@@ -6,24 +6,26 @@ import {
 	InputGroupButton,
 	InputGroupInput,
 } from "@/components/ui/input-group";
-import { ResetPass } from "@/types/reset-password";
 import { CircleCheckBig, Eye, EyeClosed } from "lucide-react";
 import { ComponentProps, useState } from "react";
-import { Controller, UseFormReturn } from "react-hook-form";
+import { Controller, FieldValues, Path, UseFormReturn } from "react-hook-form";
 
-interface PasswordFieldProps extends ComponentProps<"input"> {
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	rhfForm: UseFormReturn<ResetPass, any, ResetPass>;
-	name: keyof ResetPass;
+interface PasswordInputProps extends ComponentProps<"input"> {
 	labelText: string;
 }
 
-export function PasswordField({
+interface PasswordFieldProps<T extends FieldValues> extends PasswordInputProps {
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	rhfForm: UseFormReturn<T>;
+	name: Path<T>;
+}
+
+export function PasswordField<T extends FieldValues>({
 	name,
 	rhfForm: form,
 	labelText,
 	...props
-}: PasswordFieldProps) {
+}: PasswordFieldProps<T>) {
 	const [isFieldToggled, setIsFieldToggled] = useState(false);
 
 	return (
@@ -39,6 +41,7 @@ export function PasswordField({
 						<InputGroup>
 							<InputGroupInput
 								{...field}
+								value={field.value ?? ""}
 								id={props.id || "rhf-pass"}
 								placeholder={props.placeholder}
 								aria-invalid={fieldState.invalid}
