@@ -1,5 +1,11 @@
 import { PasswordField } from "@/components/password-field";
-import { Field, FieldGroup, FieldLabel } from "@/components/ui/field";
+import { Button } from "@/components/ui/button";
+import {
+	Field,
+	FieldError,
+	FieldGroup,
+	FieldLabel,
+} from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { AuthSignInSchema, type AuthSignIn } from "@/types/form-auth";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -13,7 +19,6 @@ export function SignInForm() {
 			password: "",
 		},
 	});
-	const password = form.watch("password");
 
 	function onSubmit(data: AuthSignIn) {
 		// const fetch
@@ -22,7 +27,7 @@ export function SignInForm() {
 
 	return (
 		<form onSubmit={form.handleSubmit(onSubmit)}>
-			<FieldGroup>
+			<FieldGroup className="mb-6 gap-6">
 				<Controller
 					name="email"
 					control={form.control}
@@ -36,6 +41,9 @@ export function SignInForm() {
 								placeholder="john@example.com"
 								autoComplete="email"
 							></Input>
+							{fieldState.invalid && (
+								<FieldError errors={[fieldState.error]} />
+							)}
 						</Field>
 					)}
 				></Controller>
@@ -43,8 +51,22 @@ export function SignInForm() {
 					rhfForm={form}
 					name="password"
 					labelText="Password"
+					placeholder="**********"
 				></PasswordField>
 			</FieldGroup>
+			<Field>
+				<Button
+					disabled={
+						!form.formState.isDirty || !form.formState.isValid
+							? true
+							: false
+					}
+					type="submit"
+					className="text-background ml-auto w-44 cursor-pointer rounded bg-indigo-700 px-3 py-5 font-medium hover:bg-indigo-800 focus:bg-indigo-800 disabled:bg-neutral-100 disabled:text-neutral-400"
+				>
+					Submit
+				</Button>
+			</Field>
 		</form>
 	);
 }
