@@ -35,10 +35,10 @@ export default function RootLayout({
 			)}
 		>
 			<body className="min-h-full bg-linear-to-b from-gray-50 to-[#d2d6db] bg-no-repeat">
-				<header>
+				<header className="flex items-center justify-center">
 					<NavigationDropdownMenu />
 				</header>
-				<main className="flex px-8 py-16   flex-col items-center justify-center">
+				<main className="flex px-8 py-16 flex-col items-center justify-center">
 					{children}
 				</main>
 			</body>
