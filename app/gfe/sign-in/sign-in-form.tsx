@@ -1,6 +1,4 @@
-
-
-import { PasswordInput } from "@/components/password-input";
+import { PasswordField } from "@/components/password-field";
 import { Field, FieldGroup, FieldLabel } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { AuthSignInSchema, type AuthSignIn } from "@/types/form-auth";
@@ -41,21 +39,11 @@ export function SignInForm() {
 						</Field>
 					)}
 				></Controller>
-				<Controller
+				<PasswordField
+					rhfForm={form}
 					name="password"
-					control={form.control}
-					render={({ field, fieldState }) => (
-						<Field>
-							<FieldLabel htmlFor="password">Password</FieldLabel>
-							<PasswordInput
-								field={field}
-								fieldState={fieldState}
-								id="password"
-								value={password}
-							/>
-						</Field>
-					)}
-				></Controller>
+					labelText="Password"
+				></PasswordField>
 			</FieldGroup>
 		</form>
 	);

@@ -5,7 +5,7 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 
 export default function SignIn() {
 	return (
-		<Card>
+		<Card className="w-full">
 			<CardHeader>
 				<CardTitle>Log in to your account</CardTitle>
 			</CardHeader>
