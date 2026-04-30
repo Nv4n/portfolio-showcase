@@ -1,3 +1,5 @@
+"use client";
+
 import { StyledLabel } from "@/components/styled-label";
 import { Field, FieldError } from "@/components/ui/field";
 import {
