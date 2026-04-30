@@ -38,7 +38,7 @@ export function SignUpForm() {
 
 	return (
 		<form onSubmit={form.handleSubmit(onSubmit)}>
-			<FieldGroup>
+			<FieldGroup className="mb-8 gap-8 sm:gap-6">
 				<Controller
 					name="email"
 					control={form.control}
@@ -97,7 +97,7 @@ export function SignUpForm() {
 					)}
 				></Controller>
 			</FieldGroup>
-			<Field orientation="horizontal">
+			<Field>
 				<Button
 					disabled={
 						!form.formState.isDirty || !form.formState.isValid
