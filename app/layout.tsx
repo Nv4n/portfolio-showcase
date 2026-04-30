@@ -1,3 +1,4 @@
+import { NavigationDropdownMenu } from "@/app/navigation";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Noto_Sans, Noto_Sans_Mono } from "next/font/google";
@@ -25,12 +26,22 @@ export default function RootLayout({
 	return (
 		<html
 			lang="en"
-			className={cn("h-full", "antialiased", fontMono.variable, "font-sans", fontSans.variable)}
+			className={cn(
+				"h-full",
+				"antialiased",
+				fontMono.variable,
+				"font-sans",
+				fontSans.variable,
+			)}
 		>
-			<body className="flex min-h-full flex-col items-center justify-center bg-linear-to-b from-gray-50 to-[#d2d6db] bg-no-repeat"> 
-        <main>
-          {children}
-          </main></body>
+			<body className="min-h-full bg-linear-to-b from-gray-50 to-[#d2d6db] bg-no-repeat">
+				<header>
+					<NavigationDropdownMenu />
+				</header>
+				<main className="flex px-8 py-16   flex-col items-center justify-center">
+					{children}
+				</main>
+			</body>
 		</html>
 	);
 }
