@@ -9,7 +9,7 @@ import {
 
 export default function Account() {
 	return (
-		<Card className="mx-8 my-16 w-full max-w-4xl gap-8">
+		<Card className="w-full max-w-4xl gap-8">
 			<CardHeader>
 				<CardTitle className="text-xl font-semibold">
 					Manage Your Account
