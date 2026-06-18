@@ -1,4 +1,4 @@
-import { PasswordResetForm } from "@/app/gfe/reset-password/password-reset-form";
+import { PasswordResetForm } from "@/app/gfe/reset-password/_components/password-reset-form";
 import {
 	Card,
 	CardHeader,

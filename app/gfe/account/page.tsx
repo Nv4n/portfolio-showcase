@@ -1,4 +1,4 @@
-import { AccountSettingsForm } from "@/app/gfe/account/account-settings-form";
+import { AccountSettingsForm } from "@/app/gfe/account/_components/account-settings-form";
 import {
 	Card,
 	CardHeader,

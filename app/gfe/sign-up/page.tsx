@@ -1,4 +1,4 @@
-import { SignUpForm } from "@/app/gfe/sign-up/sign-up-form";
+import { SignUpForm } from "@/app/gfe/sign-up/_components/sign-up-form";
 import {
 	Card,
 	CardContent,

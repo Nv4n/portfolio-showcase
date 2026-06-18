@@ -1,7 +1,7 @@
 "use client";
 
-import { GenericUserInfo } from "@/app/gfe/image-uploader/generic-user-info";
-import ImageUploadDialog from "@/app/gfe/image-uploader/image-upload-dialog";
+import { GenericUserInfo } from "@/app/gfe/image-uploader/_components/generic-user-info";
+import ImageUploadDialog from "@/app/gfe/image-uploader/_components/image-upload-dialog";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";

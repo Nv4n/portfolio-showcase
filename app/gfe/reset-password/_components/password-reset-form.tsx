@@ -1,7 +1,7 @@
 "use client";
 
-import { PasswordField } from "@/components/password-field";
-import { RequirementList } from "@/components/requirements-list";
+import { PasswordField } from "@/components/form/password-field";
+import { RequirementList } from "@/components/form/requirements-list";
 import { Button } from "@/components/ui/button";
 import { Field, FieldGroup } from "@/components/ui/field";
 import { ResetPass, ResetPassSchema } from "@/types/reset-password";

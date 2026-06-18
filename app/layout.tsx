@@ -1,4 +1,4 @@
-import { NavigationDropdownMenu } from "@/app/navigation";
+import { NavigationDropdownMenu } from "@/app/_components/navigation";
 import ErrorBoundary from "@/components/error-boundary";
 import Providers from "@/components/query-provider";
 import { cn } from "@/lib/utils";

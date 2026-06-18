@@ -1,4 +1,4 @@
-import { PasswordField } from "@/components/password-field";
+import { PasswordField } from "@/components/form/password-field";
 import { Button } from "@/components/ui/button";
 import {
 	Field,

@@ -1,6 +1,6 @@
 "use client";
 
-import { StyledLabel } from "@/components/styled-label";
+import { StyledLabel } from "@/components/form/styled-label";
 import { Button } from "@/components/ui/button";
 import {
 	Field,

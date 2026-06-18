@@ -1,6 +1,6 @@
 "use client";
 
-import { SignInForm } from "@/app/gfe/sign-in/sign-in-form";
+import { SignInForm } from "@/app/gfe/sign-in/_components/sign-in-form";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import {
 	Card,
