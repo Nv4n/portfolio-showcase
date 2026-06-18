@@ -40,18 +40,6 @@ export function NavigationDropdownMenu() {
 	return (
 		<NavigationMenu>
 			<NavigationMenuList>
-				<NavigationMenuItem>
-					<NavigationMenuTrigger>
-						University and Personal Projects
-					</NavigationMenuTrigger>
-					<NavigationMenuContent>
-						<ul className="w-96">
-							{/* <ListItem href="/docs" title="Introduction">
-								Re-usable components built with Tailwind CSS.
-							</ListItem> */}
-						</ul>
-					</NavigationMenuContent>
-				</NavigationMenuItem>
 				<NavigationMenuItem className="hidden md:flex">
 					<NavigationMenuTrigger>
 						Great Front-end projects

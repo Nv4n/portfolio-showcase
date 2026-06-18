@@ -1,7 +1,10 @@
 import { NavigationDropdownMenu } from "@/app/navigation";
+import ErrorBoundary from "@/components/error-boundary";
+import Providers from "@/components/query-provider";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Noto_Sans, Noto_Sans_Mono } from "next/font/google";
+import { Toaster } from "sonner";
 import "./globals.css";
 
 const fontSans = Noto_Sans({
@@ -38,9 +41,24 @@ export default function RootLayout({
 				<header className="flex items-center justify-center">
 					<NavigationDropdownMenu />
 				</header>
-				<main className="flex px-8 py-16 flex-col items-center justify-center">
-					{children}
-				</main>
+				<Providers>
+					<ErrorBoundary title="Card info form Error">
+						<main className="flex px-8 py-16 flex-col items-center justify-center">
+							{children}
+						</main>
+					</ErrorBoundary>
+					<Toaster
+						swipeDirections={["right", "left"]}
+						position="top-center"
+						toastOptions={{
+							style: {
+								background: "transparent",
+								border: "none",
+								boxShadow: "0 0 #0000",
+							},
+						}}
+					/>
+				</Providers>
 			</body>
 		</html>
 	);
