@@ -37,7 +37,7 @@ export default function RootLayout({
 				fontSans.variable,
 			)}
 		>
-			<body className="min-h-full bg-linear-to-b from-gray-50 to-[#d2d6db] bg-no-repeat">
+			<body className="min-h-full bg-fixed bg-linear-to-b from-gray-50 to-[#d2d6db] bg-no-repeat">
 				<header className="flex items-center justify-center">
 					<NavigationDropdownMenu />
 				</header>

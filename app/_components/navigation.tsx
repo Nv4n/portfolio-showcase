@@ -1,3 +1,4 @@
+import { AuthModeProvider } from "@/components/auth-mode-provider";
 import {
 	NavigationMenu,
 	NavigationMenuContent,
@@ -57,6 +58,9 @@ export function NavigationDropdownMenu() {
 							))}
 						</ul>
 					</NavigationMenuContent>
+				</NavigationMenuItem>
+				<NavigationMenuItem>
+					<AuthModeProvider />
 				</NavigationMenuItem>
 			</NavigationMenuList>
 		</NavigationMenu>
