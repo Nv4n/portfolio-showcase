@@ -14,7 +14,7 @@ import Link from "next/link";
 
 export default function SignIn() {
 	return (
-		<div className="bg-background w-full min-h-full px-24 py-16 gap-8 flex justify-center items-center">
+		<div className="bg-background w-full min-h-full xl:px-24 lg:px-8 px-3 py-12 gap-8 flex justify-center items-center">
 			<Card className="w-full max-w-96">
 				<CardHeader>
 					<CardTitle className="font-semibold text-3xl">
@@ -33,13 +33,16 @@ export default function SignIn() {
 					</span>
 				</CardFooter>
 			</Card>
-			<div className="relative flex self-stretch grow max-w-[500px] -scale-x-100 rounded overflow-hidden">
+			<div className="relative hidden xl:flex max-w-150 self-stretch grow rounded overflow-hidden">
 				<AspectRatio ratio={1 / 1}>
 					<Image
 						loading="lazy"
 						src={"/assets/sign-in.jpg"}
-						alt={"Sign up image"}
+						placeholder="blur"
+						blurDataURL="..."
+						sizes="(min-width: 1024px) 592px"
 						fill
+						alt={"Sign up image"}
 						className="object-cover"
 					/>
 				</AspectRatio>
