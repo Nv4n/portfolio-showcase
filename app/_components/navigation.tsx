@@ -1,6 +1,5 @@
-"use cleint";
+"use client";
 
-import { AuthModeProvider } from "@/components/auth-mode-provider";
 import {
 	NavigationMenu,
 	NavigationMenuContent,
@@ -47,18 +46,18 @@ const gfeComponents: { title: string; href: string; description: string }[] = [
 		href: "/gfe/billing-history",
 		description: "",
 	},
-	{
-		title: "Notifications Settings",
-		href: "/gfe/notification-settings",
-		description: "",
-	},
+	// {
+	// 	title: "Notifications Settings",
+	// 	href: "/gfe/notification-settings",
+	// 	description: "",
+	// },
 ];
 
 export function NavigationDropdownMenu() {
 	return (
 		<NavigationMenu>
 			<NavigationMenuList>
-				<NavigationMenuItem className="hidden md:flex">
+				<NavigationMenuItem className="md:flex">
 					<NavigationMenuTrigger>
 						Great Front-end projects
 					</NavigationMenuTrigger>
@@ -76,9 +75,9 @@ export function NavigationDropdownMenu() {
 						</ul>
 					</NavigationMenuContent>
 				</NavigationMenuItem>
-				<NavigationMenuItem>
+				{/* <NavigationMenuItem>
 					<AuthModeProvider />
-				</NavigationMenuItem>
+				</NavigationMenuItem> */}
 			</NavigationMenuList>
 		</NavigationMenu>
 	);
