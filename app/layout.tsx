@@ -43,7 +43,7 @@ export default function RootLayout({
 				</header>
 				<Providers>
 					<ErrorBoundary title="Card info form Error">
-						<main className="flex px-8 py-16 flex-col items-center justify-center">
+						<main className="px-8 py-16 flex flex-col items-center justify-center">
 							{children}
 						</main>
 					</ErrorBoundary>
