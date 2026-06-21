@@ -50,7 +50,7 @@ export function PasswordField<T extends FieldValues>({
 								type={isFieldToggled ? "text" : "password"}
 							/>
 							<InputGroupAddon align={"inline-end"}>
-								{fieldState.isDirty &&
+								{!fieldState.isDirty &&
 									!fieldState.invalid &&
 									field.value && (
 										<CircleCheckBig className="text-background fill-green-700" />

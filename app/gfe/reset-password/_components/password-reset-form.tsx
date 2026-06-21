@@ -6,7 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Field, FieldGroup } from "@/components/ui/field";
 import { ResetPass, ResetPassSchema } from "@/types/reset-password";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
+import { useMemo } from "react";
+import { useForm, useWatch } from "react-hook-form";
 
 export function PasswordResetForm() {
 	const form = useForm<ResetPass>({
@@ -16,14 +17,16 @@ export function PasswordResetForm() {
 			newPassword: "",
 			confirmPassword: "",
 		},
-		mode: "onSubmit",
+		mode: "onTouched",
+	});
+	const passwordValue = useWatch({
+		control: form.control,
+		name: "newPassword",
 	});
 
 	function onSubmit(data: ResetPass) {
 		console.log(data);
 	}
-
-	const passwordValue = form.watch("newPassword");
 
 	return (
 		<form id="account-rhf" onSubmit={form.handleSubmit(onSubmit)}>
