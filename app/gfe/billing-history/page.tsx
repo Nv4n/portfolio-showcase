@@ -42,14 +42,6 @@ export default function Home() {
 			<CardContent>
 				{isEmptyState ? <EmptyBillingView /> : <BillingHistoryView />}
 			</CardContent>
-			<CardFooter>
-				<Link
-					className={buttonVariants({ variant: "link" })}
-					href={"/api/invoice/test"}
-				>
-					TEST ME
-				</Link>
-			</CardFooter>
 		</Card>
 	);
 }

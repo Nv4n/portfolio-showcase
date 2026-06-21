@@ -1,26 +1,35 @@
-import { b2UploadFile } from '@/app/api/_utils/b2Upload';
-import fs from 'fs';
-import { NextResponse } from 'next/server';
+import { b2UploadFile } from "@/app/api/_utils/b2Upload";
+import { getB2Client } from "@/lib/b2";
+import { GetObjectCommand, PutObjectCommand } from "@aws-sdk/client-s3";
+import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
+import fs from "fs";
+import { get } from "http";
+import { NextResponse } from "next/server";
 
 export async function GET(
 	req: Request,
 	{ params }: { params: Promise<{ id: string }> },
 ) {
 	if (!process.env.B2_BUCKET_NAME) {
-		console.error('No bucket name');
-		NextResponse.json({ error: 'Internal server error' }, { status: 500 });
-		throw new Error('No bucket name');
+		console.error("No bucket name");
+		return NextResponse.json(
+			{ error: "Internal server error" },
+			{ status: 500 },
+		);
 	}
-
 	const { id } = await params;
-	
-
-	const file = fs.createReadStream('./app/api/_utils/GFE-0004.pdf');
-	const result = await b2UploadFile({
-		bucketName: process.env.B2_BUCKET_NAME,
-		filename: `invoice-${id || 'no-id'}`,
-		file: file,
+	const b2 = getB2Client();
+	const command = new GetObjectCommand({
+		Bucket: process.env.B2_BUCKET_NAME!,
+		Key: "invoice-0",
+		ResponseContentType: "application/pdf",
+		ResponseContentDisposition: 'inline; filename="my-invoice.pdf"', 
 	});
-	console.log(result);
-	return Response.json({ url: 'localhost:3000' });
+
+	const url = await getSignedUrl(b2, command, {
+		expiresIn: 3600,
+	});
+
+	console.log(url);
+	return Response.json({ url }, { status: 200 });
 }
