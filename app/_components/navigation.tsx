@@ -1,3 +1,5 @@
+"use cleint";
+
 import { AuthModeProvider } from "@/components/auth-mode-provider";
 import {
 	NavigationMenu,
@@ -11,28 +13,43 @@ import Link from "next/link";
 
 const gfeComponents: { title: string; href: string; description: string }[] = [
 	{
-		title: "GFE Account Settings Section",
+		title: "Account Settings Section",
 		href: "/gfe/account",
 		description: "",
 	},
 	{
-		title: "GFE Sign in",
+		title: "Sign in",
 		href: "/gfe/sign-in",
 		description: "",
 	},
 	{
-		title: "GFE Sign up",
+		title: "Sign up",
 		href: "/gfe/sign-up",
 		description: "",
 	},
 	{
-		title: "GFE Image uploader",
+		title: "Image uploader",
 		href: "/gfe/image-uploader",
 		description: "",
 	},
 	{
-		title: "GFE Reset Password",
+		title: "Reset Password",
 		href: "/gfe/reset-password",
+		description: "",
+	},
+	{
+		title: "Billing Information",
+		href: "/gfe/billing-information",
+		description: "",
+	},
+	{
+		title: "Billing History",
+		href: "/gfe/billing-history",
+		description: "",
+	},
+	{
+		title: "Notifications Settings",
+		href: "/gfe/notification-settings",
 		description: "",
 	},
 ];
