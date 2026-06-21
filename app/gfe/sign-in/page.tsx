@@ -38,8 +38,6 @@ export default function SignIn() {
 					<Image
 						loading="lazy"
 						src={"/assets/sign-in.jpg"}
-						placeholder="blur"
-						blurDataURL="..."
 						sizes="(min-width: 1024px) 592px"
 						fill
 						alt={"Sign up image"}

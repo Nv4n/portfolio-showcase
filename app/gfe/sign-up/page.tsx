@@ -36,6 +36,7 @@ export default function SignUp() {
 					<Image
 						loading="lazy"
 						src={"/assets/sign-up.jpg"}
+						sizes="(min-width: 1024px) 592px"
 						alt={"Sign up image"}
 						fill
 						className="object-cover"
