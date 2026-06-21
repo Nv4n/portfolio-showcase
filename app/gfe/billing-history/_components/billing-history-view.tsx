@@ -1,4 +1,4 @@
-import { InvoiceDownloadBtn } from '@/app/_components/invoice-download-btn';
+import { InvoiceDownloadBtn } from '@/app/gfe/billing-history/_components/invoice-download-btn';
 import {
 	Table,
 	TableBody,

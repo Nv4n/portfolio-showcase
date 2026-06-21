@@ -1,7 +1,7 @@
 "use client";
-import { AddressDetails } from "@/app/_components/card-info-form/sections/adress-details";
-import { EmailDetails } from "@/app/_components/card-info-form/sections/email-details";
-import { PaymentDetails } from "@/app/_components/card-info-form/sections/payment-details";
+import { AddressDetails } from "@/app/gfe/billing-information/_components/card-info-form/sections/adress-details";
+import { EmailDetails } from "@/app/gfe/billing-information/_components/card-info-form/sections/email-details";
+import { PaymentDetails } from "@/app/gfe/billing-information/_components/card-info-form/sections/payment-details";
 import { Button } from "@/components/ui/button";
 import { Field, FieldGroup, FieldSeparator } from "@/components/ui/field";
 import { useUpdateCardInfo } from "@/hooks/useUpdateCardInfo";

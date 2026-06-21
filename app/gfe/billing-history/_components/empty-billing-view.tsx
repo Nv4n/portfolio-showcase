@@ -5,7 +5,8 @@ import {
 	EmptyMedia,
 	EmptyTitle,
 } from '@/components/ui/empty';
-import { CreditCard, SquareDashedText } from 'lucide-react';
+import { SquareDashedText } from 'lucide-react';
+
 
 export function EmptyBillingView() {
 	return (

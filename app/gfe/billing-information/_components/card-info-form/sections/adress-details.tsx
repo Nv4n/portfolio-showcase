@@ -17,7 +17,6 @@ import {
 	SelectValue,
 } from "@/components/ui/select";
 import { CardFormData } from "@/types/card";
-import { formatDigitsOnly } from "@/utils/digits-only-formatter";
 import { Controller, useFormContext } from "react-hook-form";
 import { PatternFormat } from "react-number-format";
 
